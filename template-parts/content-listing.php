@@ -1,10 +1,10 @@
 <article class="col-lg-4 col-md-6 col-sm-12 post">
     <div class="prev-header bg-secondary">
-        <a href="#">
+        <a href="<?php the_permalink();?>">
             <h3><?php the_title();?></h3>
         </a>
-        <p>By <a href="#">YukiMinami</a> on <a href="#">2018/07/29</a></p>
-        <p>Category: <a href="#">category</a></p>
+        <p>By <?php the_author_posts_link();?> on <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d'));?>"><?php echo get_the_date('Y/m/d');?></a></p>
+        <p>Category: <?php the_category(', ');?></p>
     </div>
     <div class="prev-body bg-light">
         <div class="prev-img">

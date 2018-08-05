@@ -6,12 +6,14 @@
                 the_post();
                 get_template_part('/template-parts/content-type');
             endwhile;
-        //else:
-        //    get_template_part('template-parts/content-none');
+        else:
+            get_template_part('template-parts/content-none');
         endif;
     ?>
     </section>
-    <nav>
-        <?php echo paginate_links();?>
-    </nav>
+    <?php if(paginate_links()!=''):?>
+        <nav class="pagination">
+            <?php echo paginate_links();?>
+        </nav>
+    <?php endif;?>
 </main>

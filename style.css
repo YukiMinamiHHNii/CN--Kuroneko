@@ -15,7 +15,7 @@
     --indigo: #6610f2;
     --purple: #6f42c1;
     --pink: #e83e8c;
-    --red: #E74C3C;
+    --red: #d3345d;
     --orange: #fd7e14;
     --yellow: #F39C12;
     --green: #00bc8c;
@@ -49,6 +49,7 @@
 }
 
 html {
+    font-size: 16px;
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -187,12 +188,12 @@ a {
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
-    transition: all .5s;
+    transition: all .3s;
+    font-weight: bold;
 }
 
 a:hover {
     color: var(--red);
-    font-weight: bold;
 }
 
 a:not([href]):not([tabindex]) {
@@ -3556,14 +3557,14 @@ input[type="button"].btn-block {
 .dropdown-item:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #375a7f;
+    background-color: var(--red);
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #375a7f;
+    background-color: var(--red);
 }
 
 .dropdown-item.disabled,
@@ -4795,7 +4796,7 @@ input[type="button"].btn-block {
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-    color: #fff;
+    color: var(--red);
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -4846,7 +4847,7 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-brand:focus {
-    color: #fff;
+    color: var(--red);
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -6778,7 +6779,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-    background-color: #adb5bd !important;
+    background-color: #362750/*#adb5bd !important*/
+    ;
 }
 
 a.bg-dark:hover,
@@ -10019,6 +10021,7 @@ a.text-dark:focus {
 .prev-header p {
     margin: 0;
     text-align: center;
+    overflow-wrap: break-word;
 }
 
 .prev-img {
@@ -10032,6 +10035,7 @@ a.text-dark:focus {
 
 .prev-body {
     text-align: justify;
+    height: 100%;
 }
 
 .prev-text {
@@ -10048,4 +10052,35 @@ a.text-dark:focus {
 
 .footer p {
     margin: 0;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.row>article {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+}
+
+#navbarDropdown {
+    padding-right: 1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+    .dropdown-menu.show {
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px;
+    }
+    .dropdown-item {
+        width: 33.33%;
+    }
 }
