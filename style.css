@@ -228,11 +228,14 @@ pre {
 
 figure {
     margin: 0 0 1rem;
+    max-width: 100%;
 }
 
 img {
     vertical-align: middle;
     border-style: none;
+    max-width: 100%;
+    height: auto;
 }
 
 svg {
@@ -10072,6 +10075,48 @@ main {
     display: flex;
     justify-content: space-around;
     padding-bottom: 1.5rem;
+}
+
+.no-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.no-content .form-inline {
+    display: flex;
+    justify-content: center;
+}
+
+.post-content {
+    padding: 1.5rem;
+    text-align: justify;
+}
+
+.post-content .post-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.post-info h1,
+.post-info p {
+    margin: 0;
+}
+
+.post-info h1 {
+    color: var(--red);
+}
+
+.post-content .wp-post-image {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.post-comments {
+    margin-top: 0rem;
+}
+
+.post-comments section {
+    padding: 1.5rem;
 }
 
 @media screen and (min-width: 992px) {
