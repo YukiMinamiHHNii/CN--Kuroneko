@@ -27,13 +27,25 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pages
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                            <?php 
+                                foreach(get_pages() as $page) {
+                                    $pageLink= get_page_link($page->ID);
+                                    echo "<a class='dropdown-item' href='$pageLink'>".$page->post_title."</a>";
+                                } 
+                            ?>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php 
-                                $categories = get_categories(array('orderby'=>'name','order'=>'ASC'));
-                                foreach( $categories as $category ) {
+                                foreach( get_categories(array('orderby'=>'name','order'=>'ASC')) as $category) {
                                     $postLink= get_category_link($category->term_id);
                                     echo "<a class='dropdown-item' href='$postLink'>".$category->name."</a>";
                                 } 

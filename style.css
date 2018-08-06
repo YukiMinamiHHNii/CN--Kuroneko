@@ -2096,7 +2096,7 @@ pre code {
 .form-control:focus {
     color: #444;
     background-color: #fff;
-    border-color: #739ac2;
+    border-color: var(--white);
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(55, 90, 127, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(55, 90, 127, 0.25);
@@ -10102,7 +10102,7 @@ main {
     margin: 0;
 }
 
-.post-info h1 {
+.post-info h2 {
     color: var(--red);
 }
 
@@ -10119,13 +10119,46 @@ main {
     padding: 1.5rem;
 }
 
+.comment-list,
+.children {
+    list-style: none;
+}
+
+.comment-body {
+    margin: 1rem 0;
+}
+
+.comment-body .comment-content p {
+    margin-bottom: .5rem;
+    overflow-wrap: break-word;
+}
+
+.comment-form label {
+    display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+    margin-bottom: .5rem;
+}
+
+.comment-form .form-submit {
+    margin: 0;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
 @media screen and (min-width: 992px) {
     .dropdown-menu.show {
         display: flex;
         flex-wrap: wrap;
         width: 500px;
+        max-width: 500px;
     }
     .dropdown-item {
         width: 33.33%;
+        overflow: hidden;
     }
 }
